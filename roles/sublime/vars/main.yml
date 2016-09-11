@@ -1,0 +1,5 @@
+---
+
+sublime_version: 3
+
+sublime_ppa: "ppa:webupd8team/sublime-text-{{ sublime_version }}"

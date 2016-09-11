@@ -1,0 +1,11 @@
+---
+
+- name: Add sublime repository
+  apt_repository: repo="{{ sublime_ppa }}" state=present
+  become: true
+
+- name: Install latest sublime package
+  apt: pkg="{{ item }}" state=latest
+  with_items:
+    - sublime-text-installer
+  become: true

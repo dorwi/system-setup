@@ -1,0 +1,5 @@
+---
+
+- name: Install Keepassx
+  apt: name=keepassx state=latest
+  become: true
