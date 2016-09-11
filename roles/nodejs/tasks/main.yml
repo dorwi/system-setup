@@ -1,0 +1,9 @@
+---
+
+- include: nvm.yml
+
+#TODO: why is this not working
+- name: Install the latest node with nvm
+  shell: source /home/dorwi/.profile && nvm install node
+  args:
+    executable: /bin/bash

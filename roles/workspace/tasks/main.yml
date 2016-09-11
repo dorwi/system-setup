@@ -1,0 +1,8 @@
+---
+
+- name: Enable 2 horizontal workspaces
+  command:  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2
+
+
+- name: Enable 2 vertical workspaces
+  command:  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
