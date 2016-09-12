@@ -3,6 +3,28 @@
 - name: Enable 2 horizontal workspaces
   command:  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2
 
-
 - name: Enable 2 vertical workspaces
   command:  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
+
+- name: Move the unity launcher to the bottom
+  command: gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+
+- name: Solarized colors
+  apt: name=dconf-cli state=latest
+
+- name: Download the git for Solarized
+  git:
+    repo: git@github.com:Anthony25/gnome-terminal-colors-solarized.git
+    dest: /home/dorwi/Installs/.gnome-terminal-colors-solarized
+
+- name: Download the solarized dircolors
+  git:
+    repo: git@github.com:seebi/dircolors-solarized.git
+    dest: /home/dorwi/Installs/.dircolors-solarized
+
+
+- name: Add a line to ~/.profile for using the 256 dircolors
+  lineinfile: 
+    dest: /home/dorwi/.bashrc
+    line: "eval `dircolors /home/dorwi/Installs/.dircolors-solarized/dircolors.256dark`"
