@@ -12,19 +12,22 @@
 
 - name: Solarized colors
   apt: name=dconf-cli state=latest
+  become: true
 
 - name: Download the git for Solarized
   git:
     repo: git@github.com:Anthony25/gnome-terminal-colors-solarized.git
-    dest: /home/dorwi/Installs/.gnome-terminal-colors-solarized
+    dest: ~/Installs/.gnome-terminal-colors-solarized
+    accept_hostkey: yes
 
 - name: Download the solarized dircolors
   git:
     repo: git@github.com:seebi/dircolors-solarized.git
-    dest: /home/dorwi/Installs/.dircolors-solarized
+    dest: ~/Installs/.dircolors-solarized
+    accept_hostkey: yes
 
 
 - name: Add a line to ~/.profile for using the 256 dircolors
   lineinfile: 
-    dest: /home/dorwi/.bashrc
-    line: "eval `dircolors /home/dorwi/Installs/.dircolors-solarized/dircolors.256dark`"
+    dest: ~/.bashrc
+    line: "eval `dircolors ~/Installs/.dircolors-solarized/dircolors.256dark`"

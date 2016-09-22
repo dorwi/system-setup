@@ -1,0 +1,14 @@
+---
+
+
+- name: Instal pexpect
+  pip: name=pexpect state=latest
+
+- name: Create an ssh key if not exists
+  expect:
+    command: ssh-keygen -t rsa -b 4096
+    responses:
+      "Enter file in which to save the key": "\n"
+      "Enter passphrase": "\n"
+      "Enter same passphrase again": "\n" 
+    creates: ~/.ssh/id_rsa

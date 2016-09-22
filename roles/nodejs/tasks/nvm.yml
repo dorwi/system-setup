@@ -10,4 +10,4 @@
 - name: Run the shell script with additional environment values
   script: /tmp/nvm-install.sh
   environment:
-    NVM_DIR: /home/dorwi/Installs/.nvm
+    NVM_DIR: /home/vkanalas/Installs/.nvm
