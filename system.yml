@@ -5,4 +5,5 @@
   roles:
     - python
     - ssh
+    - maven
     - file-structure
