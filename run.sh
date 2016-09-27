@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ansible-playbook site.yml -i hosts --ask-sudo-pass -vv
+ansible-playbook current.yml -i hosts --ask-sudo-pass -v

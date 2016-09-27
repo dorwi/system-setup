@@ -1,0 +1,6 @@
+---
+
+
+- hosts: local-machine
+  roles:
+    - git

@@ -4,6 +4,7 @@
 - hosts: local-machine
   roles:
     - python
+    - git
     - ssh
     - maven
     - file-structure
