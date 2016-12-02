@@ -3,7 +3,7 @@
 
 - hosts: local-machine
   roles:
-    - python
+    - python-pip
     - git
     - ssh
     - maven

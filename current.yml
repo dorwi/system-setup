@@ -3,4 +3,4 @@
 
 - hosts: local-machine
   roles:
-    - git
+    - virtualenvwrapper

@@ -5,3 +5,4 @@
   roles:
     - sublime
     - keepassx
+    - virtualenvwrapper

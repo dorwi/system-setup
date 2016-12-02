@@ -1,0 +1,17 @@
+---
+
+- name: Install Install virtualenvwrapper
+  apt: name=virtualenvwrapper state=latest
+  become: true
+
+
+- name: Add the initiall scripts to .bash_profile
+  lineinfile:
+    dest: ~/.bash_profile
+    line: "{{ item }}"
+    state: present
+    create: yes
+  with_items:
+    - 'export WORKON_HOME=$HOME/.virtualenvs'
+    - 'export PROJECT_HOME=$HOME/LocalProjects'
+    - 'source /usr/local/bin/virtualenvwrapper.sh'
